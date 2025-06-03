@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salesforce Lead Form</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #fefcea, #f1f1f1);
+      color: #333;
+    }
+
+    form {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+      border: 1px solid #eee;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      max-width: 180px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fdfdfd;
+      font-size: 15px;
+      transition: all 0.2s ease-in-out;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #f6c700;
+      background-color: #fffde6;
+      box-shadow: 0 0 5px rgba(255, 204, 0, 0.2);
+    }
+
+    select[multiple] {
+      height: auto;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="submit"] {
+      margin-top: 30px;
+      background-color: #FFD700;
+      color: #333;
+      font-weight: bold;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.25);
+    }
+
+    input[type="submit"]:hover {
+      background-color: #e6bf00;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+      form {
+        padding: 25px;
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfo000002vILd" method="POST" novalidate>
+
+    <input type="hidden" name="oid" value="00Dfo000002vILd">
+    <input type="hidden" name="retURL" value="https://htmlpreview.github.io/?https://github.com/born-madd/sf_components/blob/main/WebToLeadlandingPage.html">
+
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/PM_Logo_RGB_4000px.png" alt="Company Logo" />
+    </div>
+
+    <label for="first_name">First Name</label>
+    <input id="first_name" name="first_name" type="text" maxlength="40" placeholder="John" required>
+
+    <label for="last_name">Last Name</label>
+    <input id="last_name" name="last_name" type="text" maxlength="80" placeholder="Doe" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" maxlength="80" placeholder="john.doe@example.com" required>
+
+    <label for="phone">Phone</label>
+    <input  id="phone" maxlength="40" name="phone" size="20" type="text" required /><br>
+
+    <label for="company">Company</label>
+    <input id="company" name="company" type="text" maxlength="40" placeholder="Your Company Name" required>
+
+    <label for="zip">Zip</label>
+    <input id="zip" name="zip" type="text" maxlength="10" placeholder="123456" required>
+
+    <label for="city">City</label>
+    <input id="city" name="city" type="text" maxlength="40" placeholder="City" required>
+
+    <label for="state">State/Province</label>
+    <input id="state" name="state" type="text" maxlength="20" placeholder="State or Province" required>
+
+    <label for="country">Country</label>
+    <input id="country" name="country" type="text" maxlength="40" placeholder="Country" required>
+
+    <label for="industry">Industry</label>
+    <select id="industry" name="industry" required>
+      <option value="">--Select Industry--</option>
+      <option value="Agriculture">Agriculture</option>
+      <option value="Apparel">Apparel</option>
+      <option value="Banking">Banking</option>
+      <option value="Biotechnology">Biotechnology</option>
+      <option value="Chemicals">Chemicals</option>
+      <option value="Communications">Communications</option>
+      <option value="Construction">Construction</option>
+      <option value="Consulting">Consulting</option>
+      <option value="Education">Education</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Energy">Energy</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Environmental">Environmental</option>
+      <option value="Finance">Finance</option>
+      <option value="Food &amp; Beverage">Food &amp; Beverage</option>
+      <option value="Government">Government</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Hospitality">Hospitality</option>
+      <option value="Insurance">Insurance</option>
+      <option value="Machinery">Machinery</option>
+      <option value="Manufacturing">Manufacturing</option>
+      <option value="Media">Media</option>
+      <option value="Not For Profit">Not For Profit</option>
+      <option value="Recreation">Recreation</option>
+      <option value="Retail">Retail</option>
+      <option value="Shipping">Shipping</option>
+      <option value="Technology">Technology</option>
+      <option value="Telecommunications">Telecommunications</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Utilities">Utilities</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="00Nfo0000011mrt">Product Interest</label>
+    <select id="00Nfo0000011mrt" name="00Nfo0000011mrt" multiple required title="Please select at least one product">
+      <option value="Concrete Pumping">Concrete Pumping</option>
+      <option value="Material Conveying">Material Conveying</option>
+      <option value="Specialized Equipment">Specialized Equipment</option>
+      <option value="Industrial & Environmental">Industrial & Environmental</option>
+      <option value="Precast & Site Solutions">Precast & Site Solutions</option>
+    </select>
+
+    <label for="00Nfo00000164Er">Enquiry</label>
+    <textarea id="00Nfo00000164Er" name="00Nfo00000164Er" placeholder="Describe your inquiry or interest here..." required></textarea>
+
+    <input type="submit" name="submit" value="Submit">
+
+  </form>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+      let form = e.target;
+      let isValid = true;
+
+      // Remove previous error messages
+      document.querySelectorAll(".error-message").forEach(el => el.remove());
+
+      form.querySelectorAll("input, select, textarea").forEach(field => {
+        field.style.borderColor = "#ccc"; // Reset style
+        if (!field.checkValidity()) {
+          isValid = false;
+
+          // Style invalid fields
+          field.style.borderColor = "red";
+
+          // Create error message
+          let msg = document.createElement("div");
+          msg.className = "error-message";
+          msg.textContent = field.validationMessage;
+
+          // Insert error message below field
+          field.parentNode.insertBefore(msg, field.nextSibling);
+        }
+      });
+
+      if (!isValid) {
+        e.preventDefault(); // Prevent form submission
+      }
+    });
+  </script>
+
+</body>
+</html>
