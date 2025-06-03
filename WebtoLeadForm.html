@@ -226,6 +226,22 @@
         }
       });
 
+      // Custom phone validation: only digits and optional single leading plus sign
+      let phoneField = form.querySelector("#phone");
+      let phoneValue = phoneField.value.trim();
+      let phoneRegex = /^\+?\d+$/;
+
+      if (!phoneRegex.test(phoneValue)) {
+        isValid = false;
+        phoneField.style.borderColor = "red";
+
+        let msg = document.createElement("div");
+        msg.className = "error-message";
+        msg.textContent = "Phone number must contain only digits and an optional single leading + sign.";
+
+        phoneField.parentNode.insertBefore(msg, phoneField.nextSibling);
+      }
+
       if (!isValid) {
         e.preventDefault(); // Prevent form submission
       }
