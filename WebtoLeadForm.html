@@ -97,14 +97,7 @@
       font-size: 13px;
       margin-top: 4px;
     }
-
-    @media screen and (max-width: 768px) {
-      form {
-        padding: 25px;
-        margin: 20px;
-      }
-    }
-    .form-row {
+        .form-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -114,6 +107,23 @@
   flex: 1 1 48%;
   min-width: 200px;
 }
+
+
+    @media screen and (max-width: 768px) {
+  form {
+    padding: 25px;
+    margin: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .half-width {
+    width: 100%;
+  }
+}
+
 
   </style>
 </head>
