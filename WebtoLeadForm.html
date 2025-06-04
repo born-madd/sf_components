@@ -99,13 +99,17 @@
     }
 .form-row {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
+
 .half-width {
-  flex: 1 1 48%;
-  min-width: 200px;
+  width: calc(50% - 10px); /* Leaves space between the two */
+  margin-right: 20px;
+}
+
+.form-row .half-width:last-child {
+  margin-right: 0; /* Remove margin on the last column */
 }
 
 
