@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salesforce Lead Form</title>
+  <title>Putzmeister Lead Form</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --pm-yellow: #FFCC00;
+      --pm-dark: #333333;
+      --pm-light: #f9f9f9;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to bottom right, #fefcea, #f1f1f1);
-      color: #333;
+      color: var(--pm-dark);
     }
 
     form {
@@ -39,7 +45,7 @@
       display: block;
       margin-top: 20px;
       margin-bottom: 6px;
-      color: #444;
+      color: var(--pm-dark);
     }
 
     input[type="text"],
@@ -60,7 +66,7 @@
     select:focus,
     textarea:focus {
       outline: none;
-      border-color: #f6c700;
+      border-color: var(--pm-yellow);
       background-color: #fffde6;
       box-shadow: 0 0 5px rgba(255, 204, 0, 0.2);
     }
@@ -76,8 +82,8 @@
 
     input[type="submit"] {
       margin-top: 30px;
-      background-color: #FFD700;
-      color: #333;
+      background-color: var(--pm-yellow);
+      color: var(--pm-dark);
       font-weight: bold;
       padding: 14px 28px;
       border: none;
@@ -105,8 +111,8 @@
     }
 
     .half-width {
-      flex: 1 1 0;
-      min-width: 240px;
+      flex: 1 1 48%;
+      min-width: 200px;
     }
 
     @media screen and (max-width: 768px) {
@@ -133,7 +139,7 @@
     <input type="hidden" name="retURL" value="https://htmlpreview.github.io/?https://github.com/born-madd/sf_components/blob/main/WebToLeadlandingPage.html">
 
     <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/PM_Logo_RGB_4000px.png" alt="Company Logo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/PM_Logo_RGB_4000px.png" alt="Putzmeister Logo" />
     </div>
 
     <div class="form-row">
@@ -218,20 +224,28 @@
       let form = e.target;
       let isValid = true;
 
+      // Remove previous error messages
       document.querySelectorAll(".error-message").forEach(el => el.remove());
 
       form.querySelectorAll("input, select, textarea").forEach(field => {
-        field.style.borderColor = "#ccc";
+        field.style.borderColor = "#ccc"; // Reset style
         if (!field.checkValidity()) {
           isValid = false;
+
+          // Style invalid fields
           field.style.borderColor = "red";
+
+          // Create error message
           let msg = document.createElement("div");
           msg.className = "error-message";
           msg.textContent = field.validationMessage;
+
+          // Insert error message below field
           field.parentNode.insertBefore(msg, field.nextSibling);
         }
       });
 
+      // Custom phone validation: only digits and optional single leading plus sign
       let phoneField = form.querySelector("#phone");
       let phoneValue = phoneField.value.trim();
       let phoneRegex = /^\+?\d+$/;
@@ -239,14 +253,16 @@
       if (!phoneRegex.test(phoneValue)) {
         isValid = false;
         phoneField.style.borderColor = "red";
+
         let msg = document.createElement("div");
         msg.className = "error-message";
         msg.textContent = "Phone number must contain only digits and an optional single leading + sign.";
+
         phoneField.parentNode.insertBefore(msg, phoneField.nextSibling);
       }
 
       if (!isValid) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form submission
       }
     });
   </script>
