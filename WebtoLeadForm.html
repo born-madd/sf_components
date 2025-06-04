@@ -7,7 +7,6 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
   <style>
     body {
       margin: 0;
@@ -117,13 +116,16 @@
     <div class="logo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/PM_Logo_RGB_4000px.png" alt="Company Logo" />
     </div>
-
-    <label for="first_name">First Name</label>
-    <input id="first_name" name="first_name" type="text" maxlength="40" placeholder="John" required>
-
+     <div class="form-row">
+       <div class="half-width">
+      <label for="first_name">First Name</label>
+      <input id="first_name" name="first_name" type="text" maxlength="40" placeholder="John" required>
+       </div>
+        <div class="half-width">
     <label for="last_name">Last Name</label>
     <input id="last_name" name="last_name" type="text" maxlength="80" placeholder="Doe" required>
-
+        </div>
+     </div>
     <label for="email">Email</label>
     <input id="email" name="email" type="email" maxlength="80" placeholder="john.doe@example.com" required>
 
