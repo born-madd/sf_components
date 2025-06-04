@@ -97,38 +97,32 @@
       font-size: 13px;
       margin-top: 4px;
     }
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
 
-.half-width {
-  width: calc(50% - 10px); /* Leaves space between the two */
-  margin-right: 20px;
-}
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-.form-row .half-width:last-child {
-  margin-right: 0; /* Remove margin on the last column */
-}
-
+    .half-width {
+      flex: 1 1 0;
+      min-width: 240px;
+    }
 
     @media screen and (max-width: 768px) {
-  form {
-    padding: 25px;
-    margin: 20px;
-  }
+      form {
+        padding: 25px;
+        margin: 20px;
+      }
 
-  .form-row {
-    flex-direction: column;
-  }
+      .form-row {
+        flex-direction: column;
+      }
 
-  .half-width {
-    width: 100%;
-  }
-}
-
-
+      .half-width {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -141,73 +135,80 @@
     <div class="logo">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/PM_Logo_RGB_4000px.png" alt="Company Logo" />
     </div>
-     <div class="form-row">
-       <div class="half-width">
-      <label for="first_name">First Name</label>
-      <input id="first_name" name="first_name" type="text" maxlength="40" placeholder="John" required>
-       </div>
-        <div class="half-width">
-    <label for="last_name">Last Name</label>
-    <input id="last_name" name="last_name" type="text" maxlength="80" placeholder="Doe" required>
-        </div>
-     </div>
-    <div class="form-row">
-       <div class="half-width">
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" maxlength="80" placeholder="john.doe@example.com" required>
-       </div>
-      <div class="half-width">
-    <label for="phone">Phone</label>
-    <input  id="phone" maxlength="40" name="phone" size="20" type="text" required /><br>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="half-width">
-    <label for="company">Company</label>
-    <input id="company" name="company" type="text" maxlength="40" placeholder="Your Company Name" required>
-      </div>
-      <div class="half-width">
-         <label for="city">City</label>
-    <input id="city" name="city" type="text" maxlength="40" placeholder="City" required>
-      </div>
-    </div>
-     <div class="form-row">
-      <div class="half-width">
-    <label for="state">State/Province</label>
-    <input id="state" name="state" type="text" maxlength="20" placeholder="State or Province" required>
-      </div>
-       <div class="half-width">
-    <label for="zip">Zip</label>
-    <input id="zip" name="zip" type="text" maxlength="10" placeholder="123456" required>
-       </div>
-     </div>   
 
-    
- <div class="form-row">
-      <div class="half-width">
-    <label for="country">Country</label>
-    <input id="country" name="country" type="text" maxlength="40" placeholder="Country" required>
-      </div>
- </div>
-    <input type="hidden" name="lead_source" value="Web" />
- <div class="form-row">
-       <div class="half-width">
-    <label for="00Nfo0000011mrt">Product Interest</label>
-    <select id="00Nfo0000011mrt" name="00Nfo0000011mrt" multiple required title="Please select at least one product">
-      <option value="Concrete Pumping">Concrete Pumping</option>
-      <option value="Material Conveying">Material Conveying</option>
-      <option value="Specialized Equipment">Specialized Equipment</option>
-      <option value="Industrial & Environmental">Industrial & Environmental</option>
-      <option value="Precast & Site Solutions">Precast & Site Solutions</option>
-    </select>
-       </div>
- </div>
     <div class="form-row">
-       <div class="half-width">
-    <label for="00Nfo00000164Er">Enquiry</label>
-    <textarea id="00Nfo00000164Er" name="00Nfo00000164Er" placeholder="Describe your inquiry or interest here..." required></textarea>
-       </div>
+      <div class="half-width">
+        <label for="first_name">First Name</label>
+        <input id="first_name" name="first_name" type="text" maxlength="40" placeholder="John" required>
+      </div>
+      <div class="half-width">
+        <label for="last_name">Last Name</label>
+        <input id="last_name" name="last_name" type="text" maxlength="80" placeholder="Doe" required>
+      </div>
     </div>
+
+    <div class="form-row">
+      <div class="half-width">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" maxlength="80" placeholder="john.doe@example.com" required>
+      </div>
+      <div class="half-width">
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" size="20" type="text" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="half-width">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" maxlength="40" placeholder="Your Company Name" required>
+      </div>
+      <div class="half-width">
+        <label for="city">City</label>
+        <input id="city" name="city" type="text" maxlength="40" placeholder="City" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="half-width">
+        <label for="state">State/Province</label>
+        <input id="state" name="state" type="text" maxlength="20" placeholder="State or Province" required>
+      </div>
+      <div class="half-width">
+        <label for="zip">Zip</label>
+        <input id="zip" name="zip" type="text" maxlength="10" placeholder="123456" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="half-width">
+        <label for="country">Country</label>
+        <input id="country" name="country" type="text" maxlength="40" placeholder="Country" required>
+      </div>
+    </div>
+
+    <input type="hidden" name="lead_source" value="Web" />
+
+    <div class="form-row">
+      <div class="half-width">
+        <label for="00Nfo0000011mrt">Product Interest</label>
+        <select id="00Nfo0000011mrt" name="00Nfo0000011mrt" multiple required title="Please select at least one product">
+          <option value="Concrete Pumping">Concrete Pumping</option>
+          <option value="Material Conveying">Material Conveying</option>
+          <option value="Specialized Equipment">Specialized Equipment</option>
+          <option value="Industrial & Environmental">Industrial & Environmental</option>
+          <option value="Precast & Site Solutions">Precast & Site Solutions</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="half-width">
+        <label for="00Nfo00000164Er">Enquiry</label>
+        <textarea id="00Nfo00000164Er" name="00Nfo00000164Er" placeholder="Describe your inquiry or interest here..." required></textarea>
+      </div>
+    </div>
+
     <input type="submit" name="submit" value="Submit">
 
   </form>
@@ -217,28 +218,20 @@
       let form = e.target;
       let isValid = true;
 
-      // Remove previous error messages
       document.querySelectorAll(".error-message").forEach(el => el.remove());
 
       form.querySelectorAll("input, select, textarea").forEach(field => {
-        field.style.borderColor = "#ccc"; // Reset style
+        field.style.borderColor = "#ccc";
         if (!field.checkValidity()) {
           isValid = false;
-
-          // Style invalid fields
           field.style.borderColor = "red";
-
-          // Create error message
           let msg = document.createElement("div");
           msg.className = "error-message";
           msg.textContent = field.validationMessage;
-
-          // Insert error message below field
           field.parentNode.insertBefore(msg, field.nextSibling);
         }
       });
 
-      // Custom phone validation: only digits and optional single leading plus sign
       let phoneField = form.querySelector("#phone");
       let phoneValue = phoneField.value.trim();
       let phoneRegex = /^\+?\d+$/;
@@ -246,16 +239,14 @@
       if (!phoneRegex.test(phoneValue)) {
         isValid = false;
         phoneField.style.borderColor = "red";
-
         let msg = document.createElement("div");
         msg.className = "error-message";
         msg.textContent = "Phone number must contain only digits and an optional single leading + sign.";
-
         phoneField.parentNode.insertBefore(msg, phoneField.nextSibling);
       }
 
       if (!isValid) {
-        e.preventDefault(); // Prevent form submission
+        e.preventDefault();
       }
     });
   </script>
